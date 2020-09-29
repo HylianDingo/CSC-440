@@ -1,0 +1,6 @@
+#FLASK
+instance/
+.webassets-cache
+
+#PYTHON
+__pycache__/
