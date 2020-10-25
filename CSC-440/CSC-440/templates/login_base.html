@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/base.css">
+		{% block style %}{% endblock %}
+	</head>
+
+	<body>
+		<div class="wrapper-login">
+			<div id="login-image">
+				<img src="static/images/user.png" />
+			</div>
+			<div id="content">
+				{% block welcome %}
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

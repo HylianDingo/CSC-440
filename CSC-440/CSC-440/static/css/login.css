@@ -1,0 +1,55 @@
+.wrapper-login {
+    overflow: scroll;
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 4%;
+    margin: auto;
+    width: 60%;
+    max-height: 70%;
+    height: auto;
+    display: inline-flex;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.wrapper-login::-webkit-scrollbar {
+  display: none;
+}
+
+#login-image {
+    width: 40%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#login-image > img {
+    max-width: 50%;
+    max-height: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+#content {
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#login {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+#login > input, select {
+    outline: none;
+    color: #2b2b2b;
+    padding: 1em;
+    border: none;
+    background-color: #c5c5c5;
+    border-radius: 40px;
+    width: 100%;
+}

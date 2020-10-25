@@ -14,7 +14,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'csc-440=CSC-440:main',
+            'CSC-440=CSC-440:main',
         ],
     },
 )
