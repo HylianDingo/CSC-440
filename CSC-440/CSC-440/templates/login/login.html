@@ -1,0 +1,14 @@
+{% extends "login_base.html" %}
+
+{% block welcome %}
+
+<form id="login">
+	<h2>user login</h2>
+  	<input type="text" id="email" name="email" placeholder="email"><br><br>
+  	<input type="password" id="password" name="password" placeholder="password"><br><br>
+  	<button>login</button><br/><br/>
+  	need an account? 
+  	<a href="{{ url_for('login.register') }}">register.</a>
+</form>
+
+{% endblock %}

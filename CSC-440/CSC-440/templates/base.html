@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/base.css">
+		{% block style %}{% endblock %}
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="main-grid">
+				<div id="sidebar">
+					<hr>
+					Upload<br/>
+					View<br/>
+					<hr>
+				</div>
+
+				<div id="main-content">
+					{% block contents %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
