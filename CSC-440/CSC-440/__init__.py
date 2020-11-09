@@ -1,16 +1,19 @@
 import os
 from flask import Flask
+from werkzeug.utils import secure_filename
 from .blueprints.view import viewBP
 from .blueprints.login import loginBP
 
-
-
 def create_app(test_config=None):
+
 	# create and configure the app
 	app = Flask(__name__, instance_relative_config=True)
 
 	app.register_blueprint(viewBP)
 	app.register_blueprint(loginBP)
+
+	app.config['UPLOAD_FOLDER'] = 'CSC-440/static/files'
+	app.config['ALLOWED_EXTENSIONS'] = {'csv'}
 
 
 	app.config.from_mapping(
@@ -31,11 +34,6 @@ def create_app(test_config=None):
 	except OSError:
 		pass
 
-	# a simple page that says hello
-	@app.route('/')
-	def hello():
-		return 'Index'
-
 	return app
 
 def main():
@@ -47,3 +45,4 @@ def main():
 # only occurs when running the script directly (local)
 if __name__ == '__main__':
 	main()
+

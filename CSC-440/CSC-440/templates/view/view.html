@@ -2,4 +2,19 @@
 
 {% block contents %}
 
+<!--Upload file-->
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input id="button" type="submit" value="upload">
+</form>
+
+{% if message is defined %}
+	<script>
+		document.onload = uploadAlert();
+		function uploadAlert() {
+			alert("{{ message }}");
+		}
+	</script>
+{% endif %}
+
 {% endblock %}
