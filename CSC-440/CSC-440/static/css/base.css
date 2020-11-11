@@ -44,7 +44,7 @@ button:active {
 .wrapper {
     background-color: #ffffff;
     border-radius: 40px;
-    padding: 4%;
+    padding: 2%;
     margin: auto;
     width: 96%;
     height: 98%;
@@ -58,6 +58,7 @@ button:active {
 
 #sidebar {
     grid-area: sidebar;
+    margin: 10%;
 }
 
 #main-content {

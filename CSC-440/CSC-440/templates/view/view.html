@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
-{% block contents %}
+{% block sidebar %}
+	<div class="file-list">
+		<select name="files" size="{{ filesList|count }}">
+			{% for file in filesList %}
+					<option value="{{ file }}">{{ file }}</option>
+			{% endfor %}
+		</select>
+	</div>
 
-<!--Upload file-->
-<form method="post" enctype="multipart/form-data">
-  <input type="file" name="file">
-  <input id="button" type="submit" value="upload">
-</form>
+{% endblock %}
+
+{% block contents %}
 
 {% if message is defined %}
 	<script>
