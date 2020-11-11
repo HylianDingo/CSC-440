@@ -10,6 +10,16 @@ viewBP = Blueprint('view', __name__)
 @viewBP.route("/view", methods=['GET', 'POST'])
 def view():
 
+	path = os.getcwd()+"\\CSC-440\\static\\files"
+	filesList = []
+
+	for file in os.listdir(path):
+		filesList.append(file)
+
+	return render_template('view/view.html', filesList=filesList)
+
+@viewBP.route("/upload", methods=['GET', 'POST'])
+def upload():
 	if request.method == 'POST':
 		file = request.files['file']
 		filename = secure_filename(file.filename)
@@ -19,7 +29,7 @@ def view():
 		else:
 			return uploadStatus(False)
 
-	return render_template('view/view.html')
+	return render_template('view/upload.html')
 
 @viewBP.route("/success")
 def uploadStatus(uploaded):

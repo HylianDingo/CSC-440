@@ -5,6 +5,7 @@
 		<title>Welcome</title>
 
 		<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/view.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/base.css">
 		{% block style %}{% endblock %}
 	</head>
@@ -12,13 +13,18 @@
 	<body>
 		<div class="wrapper">
 			<div class="main-grid">
+
+				<!-- Sidebar -->
 				<div id="sidebar">
 					<hr>
-					Upload<br/>
-					View<br/>
+					<a href="{{ url_for('view.view') }}">view</a><br>
+					<a href="{{ url_for('view.upload') }}">upload</a><br>
 					<hr>
+					{% block sidebar %}
+					{% endblock %}
 				</div>
 
+				<!-- Content -->
 				<div id="main-content">
 					{% block contents %}
 					{% endblock %}
