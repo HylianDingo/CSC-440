@@ -2,10 +2,40 @@
 
 {% block contents %}
 
+<!--Choose Type-->
+<label for="analysis">select regression method:</label>
+<select name="analysis">
+	<option value="linear">linear</option>
+	<option value="quadratic">quadratic</option>
+	<option value="cubic">cubic</option>
+</select>
+
+<p>select dependent/independent or not included for each column.</p>
+{% set openFile = ['HEATRATE', 'POWER', 'AIRFLOW', 'EXH-TEMP', 'INLET-TEMP', 'CPRATIO', 'RPM', 'SHAFTS', 'ENGINE'] %}
+<table id="file-content">
+	<tr>
+		{% for x in range(8) %}
+			<td>
+				{{ openFile[x] }}
+				<select>
+					<option value="dependent">dependent</option>
+					<option value="independent">independent</option>
+					<option value="not included">not included</option>
+				</select>
+			</td>
+		{% endfor %}
+	</tr>
+</table>
+
 <!--Upload file-->
-<form method="post" enctype="multipart/form-data">
-  <input type="file" name="file">
-  <input id="button" type="submit" value="upload">
+<form id="upload-form" method="post" enctype="multipart/form-data">
+	<div id="select-file">
+	  	<input type="file" name="file"> 
+	 </div>
+	 <br>
+	 <div id="upload-button">
+	  	<input id="button" type="submit" value="upload">
+	</div>
 </form>
 
 {% endblock %}

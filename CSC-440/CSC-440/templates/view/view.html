@@ -2,24 +2,57 @@
 
 {% block sidebar %}
 	<div class="file-list">
-		<select name="files" size="{{ filesList|count }}">
+		<select name="files" size="{{ filesList|count }}" onchange="displayFile(this.value)">
 			{% for file in filesList %}
 					<option value="{{ file }}">{{ file }}</option>
 			{% endfor %}
 		</select>
+		<form method="POST">
+			<input type="text" name="current-file" id="current-file" value="" style="display: none">
+			<input id="submit-button" type="submit" value="view file">
+		</form>
 	</div>
-
 {% endblock %}
 
 {% block contents %}
 
-{% if message is defined %}
+	{% if message is defined %}
+		<script>
+			document.onload = uploadAlert();
+			function uploadAlert() {
+				alert("{{ message }}");
+			}
+		</script>
+	{% endif %}
+
+	<p>results for: cubic</p>
+	<p>coefficient of determination: 0.5118894889562116</p>
+	<p>intercept (beta_0): -9443.041780702124</p>
+	<p>slope (beta_1): -9443.041780702124</p>
+
+	
+
+	<div id="csv-file">
+		<table id="file-content">
+			{% if openFile is defined %}
+				{% for line in openFile %}
+					<tr>
+						{% set line = line.split(',') %}
+						{% for value in line %}
+							<td>
+								{{ value }}
+							</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</table>
+	</div>
+
 	<script>
-		document.onload = uploadAlert();
-		function uploadAlert() {
-			alert("{{ message }}");
+		function displayFile(filename) {
+			document.getElementById("current-file").value = filename;
 		}
 	</script>
-{% endif %}
 
 {% endblock %}

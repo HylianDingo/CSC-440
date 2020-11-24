@@ -26,7 +26,7 @@ body {
     display: flex;
 }
 
-button {
+button, input[type=submit] {
     outline: none;
     background-size: cover;
     background-image: url(/static/images/button.png);
@@ -37,7 +37,7 @@ button {
     color: white;
 }
 
-button:active {
+button:active, input[type=submit]:active {
     transform: translateY(3px)
 }
 
@@ -52,16 +52,30 @@ button:active {
 
 .main-grid {
     display: grid;
-    grid-template-columns: 15% auto;
+    grid-template-columns: 20% auto;
     grid-template-areas: "sidebar main";
+    height: 100%;
 }
 
 #sidebar {
     grid-area: sidebar;
     margin: 10%;
+    overflow: hidden;
 }
 
 #main-content {
     grid-area: main;
+    overflow: scroll;
+    height: 100%;
 
+}
+
+#main-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#main-content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
