@@ -1,11 +1,34 @@
-.files-list {
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  border: solid grey 1px;
+td {
+	border: solid 2px lightgrey;
 }
 
-.files-list select {
-  padding: 10px;
-  margin: -5px -20px -5px -5px;
+table {
+	border-collapse: collapse;
+}
+
+.file-list {
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.file-list select {
+	padding: 0px;
+	overflow: hidden;
+	border-radius: 0px;
+	background-color: white;
+}
+
+.file-list option {
+	padding: 3px;
+}
+
+#csv-file {
+	display: grid;
+	direction: rtl;
+}
+
+#submit-button {
+	margin-bottom: 5px;
+	padding: 2%;
 }

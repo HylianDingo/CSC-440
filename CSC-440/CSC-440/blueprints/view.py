@@ -9,13 +9,23 @@ viewBP = Blueprint('view', __name__)
 
 @viewBP.route("/view", methods=['GET', 'POST'])
 def view():
-
 	path = os.getcwd()+"\\CSC-440\\static\\files"
 	filesList = []
 
 	for file in os.listdir(path):
 		filesList.append(file)
 
+	if request.method == 'POST':
+		if request.form.get('current-file'):
+			selectedFile = request.form.get('current-file')
+
+			openFile = []
+			baseFile = open('CSC-440/static/files/' + selectedFile, 'r').readlines()
+			for line in baseFile:
+				openFile.append(line)
+
+			return render_template('view/view.html', filesList=filesList, openFile=openFile)
+		
 	return render_template('view/view.html', filesList=filesList)
 
 @viewBP.route("/upload", methods=['GET', 'POST'])
