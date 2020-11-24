@@ -1,10 +1,9 @@
 # Secure Regression Analysis of Datasets 
-Project for CSC-440
+This project was intended for the class CSC-440 Secure Software Design in the Fall 2020 Semester.
 
 --------------About--------------
 
-This project was intended for the class CSC-440 Secure Software Design in the Fall 2020 Semester.
-It is designed to create a secure framework for use with machine learning algorithms.
+This project is designed to create a secure framework for use with machine learning algorithms.
 
 
 ------------Developers------------
